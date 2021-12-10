@@ -31,7 +31,7 @@ export class UsersService {
     return await this.userModel.findByIdAndRemove(id);
   }
 
-  async update(id: string): Promise<User> {
+  async generatePaymentId(id: string): Promise<User> {
     const newPaymentId = cc.generate({ parts: 1, partLen: 7 });
     const userData = await this.userModel.findOne({ _id: id });
     if (userData.paymentId.length >= 5) {
@@ -45,7 +45,7 @@ export class UsersService {
   async deletePaymentId(id: string, paymentId: string): Promise<User> {
     const userData = await this.userModel.findOne({ _id: id });
     const paymentIdIndex = userData.paymentId.indexOf(paymentId);
-    if (paymentIdIndex === -1) {
+    if (paymentIdIndex === -1 || userData.paymentId.length <= 1) {
       throw new MethodNotAllowedException();
     }
     userData.paymentId.splice(paymentIdIndex, 1);

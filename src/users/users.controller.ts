@@ -55,8 +55,8 @@ export class UsersController {
   // }
 
   @Put(':id/generate')
-  update(@Param('id') id: string): Promise<User> {
-    return this.usersService.update(id);
+  generatePaymentId(@Param('id') id: string): Promise<User> {
+    return this.usersService.generatePaymentId(id);
   }
   @Put(':id/:paymentId/delete')
   deletePaymentId(
