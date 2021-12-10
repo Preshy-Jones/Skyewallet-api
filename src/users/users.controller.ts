@@ -35,7 +35,7 @@ export class UsersController {
     return this.usersService.findByPaymentId(paymentId);
   }
 
-  @Post()
+  @Post('register')
   create(@Body() CreateUserDto: CreateUserDto): Promise<User> {
     return this.usersService.create(CreateUserDto);
   }
