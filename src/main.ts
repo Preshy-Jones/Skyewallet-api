@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     credentials: true,
-    origin: 'https://skyewalletapi.herokuapp.com',
+    origin: 'https://skyewallet-frontend.herokuapp.com',
   });
   await app.listen(process.env.PORT || 3002);
 }
