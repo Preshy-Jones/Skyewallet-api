@@ -10,6 +10,8 @@ export class CreateUserDto {
   password: string;
   phone: string;
   paymentId: [string];
+  balance: number;
+  transactions: [object];
 }
 
 // export class StudentResponseDto {

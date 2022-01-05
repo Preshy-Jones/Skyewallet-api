@@ -65,4 +65,13 @@ export class UsersController {
   ): Promise<User> {
     return this.usersService.deletePaymentId(id, paymentId);
   }
+
+  @Put(':id/:paymentId/:amount/transfer')
+  sendFunds(
+    @Param('id') id,
+    @Param('paymentId') paymentId: string,
+    @Param('amount') amount: number,
+  ) {
+    return this.usersService.makeTransfer(id, paymentId, amount);
+  }
 }

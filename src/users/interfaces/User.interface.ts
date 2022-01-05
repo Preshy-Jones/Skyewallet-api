@@ -5,4 +5,11 @@ export interface User {
   password: string;
   phone: string;
   paymentId: [string];
+  balance: number;
+  transactions: [Object];
+}
+
+export interface Users {
+  User: object;
+  Recipient: object;
 }
