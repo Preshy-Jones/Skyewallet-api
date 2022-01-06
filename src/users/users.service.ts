@@ -157,17 +157,5 @@ export class UsersService {
     } else {
       throw new NotFoundException();
     }
-    //   , function (err, docs) {
-    //   if (err) {
-    //     console.log(err);
-    //   } else {
-    //     console.log('Result : ', docs);
-    //   }
-    // })
-    // .clone()
-    // .catch(function (err) {
-    //   console.log(err);
-    //   throw new NotFoundException();
-    // });
   }
 }
